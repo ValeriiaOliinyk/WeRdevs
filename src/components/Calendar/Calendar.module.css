@@ -1,0 +1,101 @@
+.form__btn {
+  display: block;
+  border: none;
+  width: 28px;
+  height: 28px;
+  font-weight: 600;
+  font-size: 13px;
+  background-color: #fdd000;
+  margin-left: auto;
+  cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.form__box {
+  width: 100%;
+  height: 112px;
+  display: flex;
+}
+
+.form__btn:focus {
+  outline: none;
+}
+
+.form__btn:hover {
+  background-color: #e4bd12;
+}
+
+.form__input {
+  margin-top: 8px;
+  width: 220px;
+  height: 54px;
+  padding: 18px 0 14px 20px;
+  border: 2px solid #e4bd12;
+}
+
+.form__input::placeholder {
+  letter-spacing: 0.66px;
+  color: #3d3d3d;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.input__left {
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
+.input__right {
+  margin-right: 25px;
+}
+
+.input__box {
+  width: 50%;
+  margin-left: 25px;
+}
+
+.input__label {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  color: #3b494a52;
+  letter-spacing: -0.4px;
+  color: #3d3d3d;
+  opacity: 0.34;
+}
+
+/* Для календаря */
+
+.calendar__title {
+  width: 163px;
+  font-size: 19px;
+  text-align: center;
+  color: #dfdfdf;
+  text-transform: uppercase;
+}
+
+.calendar__container {
+  max-width: 467px;
+  height: 490px;
+  background: #272829 0% 0% no-repeat padding-box;
+  margin: auto;
+}
+
+.calendar__box {
+  margin: auto;
+  max-width: 467px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+/* Days */
+
+.calendar__day {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
