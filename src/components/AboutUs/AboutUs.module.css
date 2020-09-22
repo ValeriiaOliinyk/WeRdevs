@@ -1,0 +1,21 @@
+.aboutus__section {
+  padding-top: 98px;
+  padding-bottom: 130px;
+}
+
+.aboutus__title {
+  font-size: 34px;
+  color: #3d3d3d;
+  padding-bottom: 78px;
+}
+
+.aboutus__text + .aboutus__text {
+  padding-top: 38px;
+}
+
+.aboutus__text {
+  font-size: 20px;
+  letter-spacing: 0.4px;
+  color: #3d3d3d;
+  line-height: 1.8;
+}

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import useCalendar from "../../hooks/useCalendar";
+import useCalendar from "../../helpers/useCalendar";
 import PopUp from "../PopUp";
 import styles from "./Calendar.module.css";
 import IconButton from "../IconButton";
 import { ReactComponent as LeftArrowIcon } from "../../images/left-arrow.svg";
 import { ReactComponent as RightArrowIcon } from "../../images/next.svg";
+
+// Components
+import Banner from "../Banner";
+import Form from "../Form";
 
 const Calendar = () => {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -44,6 +48,9 @@ const Calendar = () => {
     let newDate = new Date(year, month, day);
     let newDay = getWeekDay(newDate);
     let newMonth = getMonth(newDate);
+    // if (newDay === "1") {
+    //   setDayOfWeek(`${day}st ${newDay}`);
+    // }
     setDayOfWeek(`${day}th ${newDay}`);
     setMonth(newMonth);
     setShowPopUp(true);
@@ -54,99 +61,71 @@ const Calendar = () => {
   };
 
   return (
-    <>
-      <div className={styles.calendar__container}>
-        <div className={styles.calendar__box}>
-          <IconButton onClick={getPrevMonth}>
-            <LeftArrowIcon />
-          </IconButton>
-          <h3 className={styles.calendar__title}>
-            {`${
-              monthNames[selectedDate.getMonth()]
-            }  ${selectedDate.getFullYear()}`}
-          </h3>
-          <IconButton onClick={getNextMonth}>
-            <RightArrowIcon />
-          </IconButton>
+    <section className={styles.calendar}>
+      <Banner />
+      <div className={styles.calendar__main}>
+        <div className={styles.calendar__container}>
+          <div className={styles.calendar__box}>
+            <IconButton onClick={getPrevMonth}>
+              <LeftArrowIcon />
+            </IconButton>
+            <h3 className={styles.calendar__title}>
+              {`${
+                monthNames[selectedDate.getMonth()]
+              }  ${selectedDate.getFullYear()}`}
+            </h3>
+            <IconButton onClick={getNextMonth}>
+              <RightArrowIcon />
+            </IconButton>
+          </div>
+          <table className="table">
+            <tbody>
+              {Object.values(calendarRows).map((cols) => {
+                return (
+                  <tr key={cols[0].date} className={styles.calendar__row}>
+                    {cols.map((col) =>
+                      col.date === todayFormatted ? (
+                        <td
+                          key={col.date}
+                          className={`${col.classes}today same`}
+                          onClick={() => dateClickHandler(col.date)}
+                        >
+                          {col.value}
+                        </td>
+                      ) : (
+                        <td
+                          key={col.date}
+                          className={`${col.classes}same`}
+                          onClick={() => dateClickHandler(col.date)}
+                        >
+                          {col.value}
+                        </td>
+                      )
+                    )}
+                  </tr>
+                );
+              })}
+              <tr>
+                {daysShort.map((day, index) => (
+                  <th key={index} className={styles.calendar__day}>
+                    {day}
+                  </th>
+                ))}
+              </tr>
+            </tbody>
+          </table>
         </div>
-
-        <table className="table">
-          <tbody>
-            {Object.values(calendarRows).map((cols) => {
-              return (
-                <tr key={cols[0].date} className={styles.calendar__row}>
-                  {cols.map((col) =>
-                    col.date === todayFormatted ? (
-                      <td
-                        key={col.date}
-                        className={`${col.classes}today same`}
-                        onClick={() => dateClickHandler(col.date)}
-                      >
-                        {col.value}
-                      </td>
-                    ) : (
-                      <td
-                        key={col.date}
-                        className={`${col.classes}same`}
-                        onClick={() => dateClickHandler(col.date)}
-                      >
-                        {col.value}
-                      </td>
-                    )
-                  )}
-                </tr>
-              );
-            })}
-            <tr>
-              {daysShort.map((day, index) => (
-                <th key={index} className={styles.calendar__day}>
-                  {day}
-                </th>
-              ))}
-            </tr>
-          </tbody>
-        </table>
+        {showPopUp && (
+          <PopUp onClose={togglePopUp}>
+            <Form
+              onOpen={togglePopUp}
+              newMonth={month}
+              newDayOfWeek={dayOfWeek}
+            />
+          </PopUp>
+        )}
       </div>
-      {showPopUp && (
-        <PopUp onClose={togglePopUp}>
-          <form>
-            <button
-              type="submit"
-              onClose={togglePopUp}
-              className={styles.form__btn}
-            >
-              Х
-            </button>
-            <div className={styles.form__box}>
-              <div className={(styles.input__box, styles.input__left)}>
-                <label for="month" className={styles.input__label}>
-                  Month
-                </label>
-                <br />
-                <input
-                  className={styles.form__input}
-                  placeholder={month}
-                  id="month"
-                  disabled
-                />
-              </div>
-              <div className={(styles.input__box, styles.input__right)}>
-                <label for="day" className={styles.input__label}>
-                  Day
-                </label>
-                <br />
-                <input
-                  className={styles.form__input}
-                  placeholder={dayOfWeek}
-                  id="day"
-                  disabled
-                />
-              </div>
-            </div>
-          </form>
-        </PopUp>
-      )}
-    </>
+    </section>
   );
 };
 
