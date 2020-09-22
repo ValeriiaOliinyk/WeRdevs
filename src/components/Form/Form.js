@@ -4,12 +4,8 @@ import styles from "./Form.module.css";
 
 const Form = ({ onClose, newMonth, newDayOfWeek }) => {
   return (
-    <form>
-      <button
-        type="submit"
-        onClose={() => onClose}
-        className={styles.form__btn}
-      >
+    <>
+      <button type="button" onClick={onClose} className={styles.form__btn}>
         Х
       </button>
       <div className={styles.form__box}>
@@ -38,7 +34,7 @@ const Form = ({ onClose, newMonth, newDayOfWeek }) => {
           />
         </div>
       </div>
-    </form>
+    </>
   );
 };
 
