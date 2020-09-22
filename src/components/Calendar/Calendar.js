@@ -9,6 +9,7 @@ import { ReactComponent as RightArrowIcon } from "../../images/next.svg";
 // Components
 import Banner from "../Banner";
 import Form from "../Form";
+import Week from "../Week";
 
 const Calendar = () => {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -19,7 +20,6 @@ const Calendar = () => {
     calendarRows,
     selectedDate,
     todayFormatted,
-    daysShort,
     monthNames,
     getNextMonth,
     getPrevMonth,
@@ -48,10 +48,17 @@ const Calendar = () => {
     let newDate = new Date(year, month, day);
     let newDay = getWeekDay(newDate);
     let newMonth = getMonth(newDate);
-    // if (newDay === "1") {
-    //   setDayOfWeek(`${day}st ${newDay}`);
-    // }
-    setDayOfWeek(`${day}th ${newDay}`);
+
+    if (day === 1) {
+      setDayOfWeek(`${day}st ${newDay}`);
+    } else if (day === 2) {
+      setDayOfWeek(`${day}nd ${newDay}`);
+    } else if (day === 3) {
+      setDayOfWeek(`${day}rd ${newDay}`);
+    } else {
+      setDayOfWeek(`${day}th ${newDay}`);
+    }
+
     setMonth(newMonth);
     setShowPopUp(true);
   };
@@ -78,6 +85,7 @@ const Calendar = () => {
               <RightArrowIcon />
             </IconButton>
           </div>
+          <div className={styles.calendar__line}></div>
           <table className="table">
             <tbody>
               {Object.values(calendarRows).map((cols) => {
@@ -105,20 +113,16 @@ const Calendar = () => {
                   </tr>
                 );
               })}
-              <tr>
-                {daysShort.map((day, index) => (
-                  <th key={index} className={styles.calendar__day}>
-                    {day}
-                  </th>
-                ))}
-              </tr>
             </tbody>
           </table>
+          <div className={styles.calendar__line}></div>
+          <Week />
+          <div className={styles.calendar__line}></div>
         </div>
         {showPopUp && (
           <PopUp onClose={togglePopUp}>
             <Form
-              onOpen={togglePopUp}
+              onClose={togglePopUp}
               newMonth={month}
               newDayOfWeek={dayOfWeek}
             />

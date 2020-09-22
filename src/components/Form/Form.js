@@ -2,15 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Form.module.css";
 
-const Form = ({ onOpen, newMonth, newDayOfWeek }) => {
+const Form = ({ onClose, newMonth, newDayOfWeek }) => {
   return (
     <form>
-      <button type="submit" onClose={() => onOpen} className={styles.form__btn}>
+      <button
+        type="submit"
+        onClose={() => onClose}
+        className={styles.form__btn}
+      >
         Х
       </button>
       <div className={styles.form__box}>
         <div className={(styles.input__box, styles.input__left)}>
-          <label for="month" className={styles.input__label}>
+          <label htmlFor="month" className={styles.input__label}>
             Month
           </label>
           <br />
@@ -22,7 +26,7 @@ const Form = ({ onOpen, newMonth, newDayOfWeek }) => {
           />
         </div>
         <div className={(styles.input__box, styles.input__right)}>
-          <label for="day" className={styles.input__label}>
+          <label htmlFor="day" className={styles.input__label}>
             Day
           </label>
           <br />

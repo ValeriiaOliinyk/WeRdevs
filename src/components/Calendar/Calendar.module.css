@@ -14,18 +14,13 @@
 
 .calendar__box {
   margin: auto;
-  width: 267px;
+  width: 277px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
-}
-
-.calendar__day {
-  color: #ffffff;
-  font-size: 14px;
-  text-align: center;
+  padding-bottom: 19px;
 }
 
 .calendar__main {
@@ -35,6 +30,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.calendar__line {
+  width: 240px;
+  height: 1.4px;
+  background-color: #ffffff;
+  opacity: 0.43;
+  margin: auto;
+  position: relative;
+  left: 4px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -56,13 +61,24 @@
     width: 367px;
   }
 
-  .calendar__day {
+  .week__day {
     font-size: 20px;
+    margin-left: 0;
   }
 
   .calendar__main {
     width: 36%;
-    height: 908px;
+    height: 708px;
+  }
+
+  .calendar__line {
+    width: 330px;
+    left: 0;
+  }
+
+  .week__day {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -73,5 +89,16 @@
 
   .calendar__box {
     width: 467px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .calendar__main {
+    height: 908px;
+  }
+
+  .calendar__line {
+    width: 410px;
+    left: 0;
   }
 }

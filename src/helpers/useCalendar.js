@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-const daysShortArr = ["S", "M", "T", "W", "T", "F", "S"];
-
 const monthNamesArr = [
   "January",
   "February",
@@ -17,7 +15,7 @@ const monthNamesArr = [
   "December",
 ];
 
-const useCalendar = (daysShort = daysShortArr, monthNames = monthNamesArr) => {
+const useCalendar = (monthNames = monthNamesArr) => {
   const today = new Date();
   const todayFormatted = `${today.getDate()}-${
     today.getMonth() + 1
@@ -135,7 +133,6 @@ const useCalendar = (daysShort = daysShortArr, monthNames = monthNamesArr) => {
 
   return {
     monthNamesArr,
-    daysShort,
     monthNames,
     todayFormatted,
     calendarRows,
