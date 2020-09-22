@@ -4,8 +4,8 @@ import Container from "../Container";
 
 const AboutUs = () => {
   return (
-    <Container>
-      <section className={styles.aboutus__section}>
+    <section className={styles.aboutus__section}>
+      <Container>
         <h2 className={styles.aboutus__title}>
           Lorem ipsum creation timelines
         </h2>
@@ -42,8 +42,8 @@ const AboutUs = () => {
           semantic roots!” (The editors published his letter in a correction
           headlined “Lorem Oopsum”).
         </p>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 };
 

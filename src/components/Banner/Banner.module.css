@@ -1,33 +1,60 @@
 /* Banner */
 
 .banner {
-  width: 64%;
+  width: 100%;
   background-image: url(../../images/header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 908px;
+  height: 308px;
 }
 
 .banner__container {
-  width: 554px;
+  width: 250px;
   height: 268px;
-  margin-left: auto;
-  margin-top: 192px;
-  margin-right: 32px;
+  margin: auto;
+  padding-top: 70px;
 }
 
 .banner__title {
-  font-size: 50px;
+  font-size: 24px;
   letter-spacing: 3.5px;
   color: #fdd000;
   text-transform: uppercase;
-  text-align: right;
-  margin-bottom: 44px;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .banner__text {
-  font-size: 30px;
+  font-size: 16px;
   letter-spacing: 0.6px;
   color: #dfdfdf;
-  text-align: right;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    width: 64%;
+    height: 908px;
+  }
+
+  .banner__title {
+    font-size: 50px;
+    margin-bottom: 44px;
+    text-align: right;
+  }
+
+  .banner__text {
+    font-size: 30px;
+    text-align: right;
+  }
+
+  .banner__container {
+    width: 554px;
+    height: 268px;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-top: 192px;
+    margin-right: 32px;
+  }
 }

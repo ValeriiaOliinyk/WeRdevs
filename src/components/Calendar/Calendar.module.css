@@ -1,50 +1,77 @@
-/* Main container */
-
-.calendar {
-  display: flex;
-}
-
-/* Для календаря */
-
 .calendar__title {
   width: 163px;
-  font-size: 19px;
+  font-size: 14px;
   text-align: center;
   color: #dfdfdf;
   text-transform: uppercase;
 }
 
 .calendar__container {
-  width: 367px;
-  height: 490px;
+  width: 267px;
+  height: 390px;
   background: #272829 0% 0% no-repeat padding-box;
 }
 
 .calendar__box {
   margin: auto;
-  width: 367px;
+  width: 267px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
-
-/* Days */
 
 .calendar__day {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 14px;
   text-align: center;
 }
 
-/* For calendar */
-
 .calendar__main {
-  width: 36%;
+  width: 100%;
   background-color: #272829;
-  height: 908px;
+  height: 608px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .calendar {
+    display: flex;
+  }
+
+  .calendar__title {
+    width: 163px;
+    font-size: 19px;
+  }
+
+  .calendar__container {
+    width: 367px;
+    height: 490px;
+  }
+
+  .calendar__box {
+    width: 367px;
+  }
+
+  .calendar__day {
+    font-size: 20px;
+  }
+
+  .calendar__main {
+    width: 36%;
+    height: 908px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .calendar__container {
+    width: 467px;
+  }
+
+  .calendar__box {
+    width: 467px;
+  }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Form.module.css";
 
 const Form = ({ onOpen, newMonth, newDayOfWeek }) => {
@@ -35,6 +36,18 @@ const Form = ({ onOpen, newMonth, newDayOfWeek }) => {
       </div>
     </form>
   );
+};
+
+Form.defaultProps = {
+  onOpen: () => null,
+  newMonth: "",
+  newDayOfWeek: "",
+};
+
+Form.propTypes = {
+  onOpen: PropTypes.func,
+  newMonth: PropTypes.string,
+  newDayOfWeek: PropTypes.string,
 };
 
 export default Form;

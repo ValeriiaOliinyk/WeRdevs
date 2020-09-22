@@ -1,21 +1,41 @@
 .aboutus__section {
-  padding-top: 98px;
-  padding-bottom: 130px;
+  padding-top: 48px;
+  padding-bottom: 58px;
 }
 
 .aboutus__title {
-  font-size: 34px;
+  font-size: 24px;
   color: #3d3d3d;
-  padding-bottom: 78px;
+  padding-bottom: 48px;
 }
 
 .aboutus__text + .aboutus__text {
-  padding-top: 38px;
+  padding-top: 28px;
 }
 
 .aboutus__text {
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: 0.4px;
   color: #3d3d3d;
   line-height: 1.8;
+}
+
+@media screen and (min-width: 768px) {
+  .aboutus__section {
+    padding-top: 98px;
+    padding-bottom: 130px;
+  }
+
+  .aboutus__title {
+    font-size: 34px;
+    padding-bottom: 78px;
+  }
+
+  .aboutus__text + .aboutus__text {
+    padding-top: 38px;
+  }
+
+  .aboutus__text {
+    font-size: 20px;
+  }
 }

@@ -38,16 +38,16 @@ ul {
 }
 
 .same {
-  width: 52px;
-  height: 50px;
+  width: 32px;
+  height: 30px;
   font-size: 17px;
   color: #dfdfdf;
   text-align: center;
 }
 
 .today {
-  width: 52px;
-  height: 50px;
+  width: 32px;
+  height: 30px;
   background-color: #fdd000;
   color: #3d3d3d;
 }
@@ -73,4 +73,16 @@ ul {
   text-align: center;
   color: #dfdfdf;
   opacity: 0.24;
+}
+
+@media screen and (min-width: 1024px) {
+  .same {
+    width: 52px;
+    height: 50px;
+  }
+
+  .today {
+    width: 52px;
+    height: 50px;
+  }
 }
