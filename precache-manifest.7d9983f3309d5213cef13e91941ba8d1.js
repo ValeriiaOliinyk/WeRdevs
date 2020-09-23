@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "02676bc8d8cf1581ba0cf3bc53ac41d9",
+    "revision": "b971fb838263ea44610bcd613478b0d2",
     "url": "/WeRdevs/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WeRdevs/static/css/about-us-page.075a8fa4.chunk.css"
   },
   {
-    "revision": "3463a541944c9b126575",
-    "url": "/WeRdevs/static/css/home-page.a7844af7.chunk.css"
+    "revision": "ee92230d81fa39b384d6",
+    "url": "/WeRdevs/static/css/home-page.4b590121.chunk.css"
   },
   {
     "revision": "8f7b8537b4d47e10fd3f",
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WeRdevs/static/js/about-us-page.5d10cc73.chunk.js"
   },
   {
-    "revision": "3463a541944c9b126575",
+    "revision": "ee92230d81fa39b384d6",
     "url": "/WeRdevs/static/js/home-page.a82f9cea.chunk.js"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WeRdevs/static/js/main.eedd66ad.chunk.js"
   },
   {
-    "revision": "afbd3a1f3e7b98b64aa2",
-    "url": "/WeRdevs/static/js/runtime-main.c8796cb6.js"
+    "revision": "c92e4ff17740b1f4946f",
+    "url": "/WeRdevs/static/js/runtime-main.8235e4f6.js"
   },
   {
     "revision": "1aef4427bd88c216da9951a258423286",
