@@ -13,8 +13,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   min-height: 140px;
-  max-width: 510px;
+  width: 280px;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 10px 10px 20px #3b494a52;
+}
+
+@media screen and (min-width: 768px) {
+  .popUp__content {
+    width: 510px;
+  }
 }
